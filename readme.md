@@ -41,6 +41,37 @@ Faça o clone/fork desse repositório para a sua máquina local. Utilize o coman
  
  No **phpMyAdmin** (ou via terminal) crie um banco de dados chamado: *banco_unis*. 
  
+ 
  _obs.: caso esse banco exista, faça o drop (excluir) nele e crie novamente_
+ 
+ 
+ ### 4) Configuração do .env
+ 
+ Altere o arquivo .env na raiz do projeto (caso não existir, duplique o .env.example renomeando para .env)
+ 
+ Altere as seguintes informações:
+ ```
+ DB_DATABASE=banco_unis
+ DB_USERNAME=SEU_USUARIO_AQUI
+ DB_PASSWORD=SUA_SENHA_AQUI
+ ```
+ 
+ Observe que tem que colocar seu usuário e senha do banco de dados local.
+ 
+ ### 5) Rodando migrate e seed
+ 
+ Para criar as tabelas do banco de dados, utilize o comando:
+ 
+ ```php artisan migrate```
+ 
+ Com esse comando será criado toda a estrutura da tabela.
+ 
+ Para popular o nosso banco de dados com algumas informações, para que não precisemos fazer cadastro, utilize a seed (mais informações [aqui](https://laravel.com/docs/5.7/seeding))
+ 
+ Para rodar as seed (popular o banco), rode o comando
+ 
+ ```php artisan db:seed```
+
+ 
  
  
