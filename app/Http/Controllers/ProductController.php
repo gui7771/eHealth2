@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all(); //tras todas as categorias para montar o combobox de escolha
+
+        return view('products.create',compact('categories'));
     }
 
     /**
@@ -36,7 +39,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'category_id' => 'required',
+            'value_sale' => 'numeric',
+            'value_cost' => 'numeric'
+        ]);
+
+
+        try {
+            Product::create($request->only(['name','category_id','value_sale','value_cost','obs']));
+            return redirect(route('products.index'))->with('status','Produto cadastrado com sucesso');
+        } catch (\Exception $exception) {
+            return redirect(route('products.index'))->with('error','Erro ao cadastrar o Produto: ' . $exception->getMessage());
+        }
+
     }
 
     /**
@@ -47,7 +64,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show',compact('product'));
     }
 
     /**
@@ -58,7 +75,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('products.edit',compact('product','categories'));
     }
 
     /**
@@ -70,7 +88,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'category_id' => 'required',
+            'value_sale' => 'numeric',
+            'value_cost' => 'numeric'
+        ]);
+
+
+        try {
+            $product->name = $request->name;
+            $product->category_id = $request->category_id;
+            $product->value_sale = $request->value_sale;
+            $product->value_cost = $request->value_cost;
+            $product->obs = $request->obs;
+            $product->save();
+            return redirect(route('products.index'))->with('status','Produto cadastrado com sucesso');
+        } catch (\Exception $exception) {
+            return redirect(route('products.index'))->with('error','Erro ao cadastrar o Produto: ' . $exception->getMessage());
+        }
     }
 
     /**

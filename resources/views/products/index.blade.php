@@ -39,9 +39,9 @@
                                     <td>{{ $product->value_cost }}</td>
                                     <td>
                                         <div class="btn-group btn-group-sm">
-                                            <a class="btn btn-info"><i href="#" class="fa fa-eye"></i></i> </a>
-                                            <a class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
-                                            <a class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
+                                            <a href="{{ route('products.show',$product) }}" class="btn btn-info"><i class="fa fa-eye"></i></i> </a>
+                                            <a href="{{ route('products.edit',$product) }}" class="btn btn-warning"><i class="fa fa-edit"></i></i> </a>
+                                            <a class="btn btn-danger"><i class="fa fa-trash"></i> </a>
                                         </div>
                                     </td>
                                 </tr>

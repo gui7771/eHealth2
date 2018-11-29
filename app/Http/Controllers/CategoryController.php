@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required|max:100',
+        ]);
+
+
+        try {
+            Category::create($request->only(['name']));
+            return redirect(route('categories.index'))
+                ->with('status','Categoria cadastrado com sucesso!');
+        } catch (\Exception $exception) {
+
+            return redirect(route('categories.index'))
+                ->with('error', 'Erro ao cadastrar a categoria: ' .
+                    $exception->getMessage());
+        }
     }
 
     /**
@@ -47,7 +62,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show',compact('category'));
     }
 
     /**
@@ -58,7 +73,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit',compact('category'));
     }
 
     /**
@@ -70,7 +85,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+        ]);
+
+
+        try {
+
+            $category->name = $request->name;
+            $category->save();
+
+            return redirect(route('categories.index'))
+                ->with('status','Categoria editada com sucesso!');
+        } catch (\Exception $exception) {
+
+            return redirect(route('categories.index'))
+                ->with('error', 'Erro ao editar a categoria: ' .
+                    $exception->getMessage());
+        }
     }
 
     /**
