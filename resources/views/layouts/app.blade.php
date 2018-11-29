@@ -51,11 +51,7 @@
                             </li>
                         @else
 
-                        <li class="nav-item">
-                            @if (Route::has('clients.index'))
-                                <a class="nav-link" href="{{ route('clients.index') }}">{{ __('Clientes') }}</a>
-                            @endif
-                        </li>
+
                         <li class="nav-item">
                             @if (Route::has('categories.index'))
                                 <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categoria') }}</a>
@@ -64,6 +60,12 @@
                         <li class="nav-item">
                             @if (Route::has('products.index'))
                                 <a class="nav-link" href="{{ route('products.index') }}">{{ __('Produtos') }}</a>
+                            @endif
+                        </li>
+
+                        <li class="nav-item">
+                            @if (Route::has('clients.index'))
+                                <a class="nav-link" href="{{ route('clients.index') }}">{{ __('Clientes') }}</a>
                             @endif
                         </li>
 

@@ -36,9 +36,9 @@
                                     <td>{{ $client->city }}/{{ $client->uf }}</td>
                                     <td>
                                         <div class="btn-group btn-group-sm">
-                                            <a class="btn btn-info"><i href="#" class="fa fa-eye"></i></i> </a>
-                                            <a class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
-                                            <a class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
+                                            <a href="{{ route('clients.show',$client) }}" class="btn btn-info"><i  class="fa fa-eye"></i></i> </a>
+                                            <a href="{{ route('clients.edit',$client) }}"  class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
+                                            <a href="#"  class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
                                         </div>
                                     </td>
                                 </tr>
