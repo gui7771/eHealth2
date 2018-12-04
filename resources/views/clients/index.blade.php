@@ -14,6 +14,10 @@
                     </div>
                     @endif
 
+                        <div class="col-md-12 text-right mb-3">
+                            <a href="{{route('clients.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Adicionar</a>
+                        </div>
+
 
                     <table class="table">
                         <thead>

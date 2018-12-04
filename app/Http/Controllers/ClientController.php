@@ -26,7 +26,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Client::all(); //tras todas as categorias para montar o combobox de escolha
+
+        return view('clients.create',compact('clients'));
     }
 
     /**
