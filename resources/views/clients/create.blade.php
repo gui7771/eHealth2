@@ -28,6 +28,16 @@
                                     <label for="name">Nome</label>
                                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                                 </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Nome</label>
+                                        <select class="form-control" name="category_id">
+                                            <option value="type">F</option>
+                                            <option value="type">M</option>
+                                        </select>
+                                    </div>
+
+
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
                             </form>
 
