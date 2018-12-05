@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Categorias</div>
+                <div class="card-header">Clientes</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,7 +22,18 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <strong>Nome:</strong> {{ $category->name }}
+                            <strong>ID:</strong> {{$client->id}}<br/>
+                            <strong>Nome:</strong> {{$client->name}}<br/>
+                            <strong>Nome Fantasia:</strong> {{$client->name_fantasy}}<br/>
+                            <strong>Tipo de Pessoa:</strong> {{$client->category_id}}<br/>
+                            <strong>CPF_CNPJ:</strong> {{$client->cpf_cnpj}}<br/>
+                            <strong>Endereço:</strong> {{$client->address}}<br/>
+                            <strong>Número:</strong> {{$client->number}}<br/>
+                            <strong>Cidade:</strong> {{$client->type}}
+                            <strong>UF:</strong> {{$client->uf}}<br/>
+                            <strong>E-mail:</strong> {{$client->email}}<br/>
+                            <strong>Observação:</strong> {{$client->obs}}<br/>
+
                         </div>
                     </div>
 

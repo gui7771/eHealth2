@@ -20,7 +20,7 @@
 
 
 
-                            <form action="{{ route('categories.store') }}" method="POST">
+                            <form action="{{ route('clients.store') }}" method="POST">
                                 {{ csrf_field() }} <!-- campo invísivel para segurança de formulário -->
                                 {{ method_field('POST') }} <!-- campo para méthodo de envio POST = Criar -->
 
@@ -30,7 +30,12 @@
                                 </div>
 
                                     <div class="form-group">
-                                        <label for="name">Nome</label>
+                                        <label for="name">Nome Fantasia</label>
+                                        <input type="text" class="form-control" id="name_fantasy" name="name_fantasy" value="{{ old('name_fantasy') }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Tipo de Pessoa</label>
                                         <select class="form-control" name="category_id">
                                             <option value="type">FISICA</option>
                                             <option value="type">JURIDICA</option>
@@ -39,32 +44,37 @@
 
                                     <div class="form-group">
                                         <label for="name">CPF/CNPJ</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('cpf_cnpj') }}">
+                                        <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" value="{{ old('cpf_cnpj') }}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">Rua</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('address') }}">
+                                        <label for="name">Endereço</label>
+                                        <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="number">Número</label>
-                                        <input type="number" class="form-control" id="name" name="name" value="{{ old('number') }}">
+                                        <input type="number" class="form-control" id="number" name="number" value="{{ old('number') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Cidade</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('city') }}">
+                                        <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">UF</label>
-                                        <input type="text" class="form-control" id="uf" name="name" value="{{ old('uf') }}">
+                                        <input type="text" class="form-control" id="uf" name="uf" value="{{ old('uf') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">E-mail</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="{{ old('uf') }}">
+                                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="value_cost">Observação</label>
+                                        <textarea class="form-control" name="obs">{{ old('obs') }}</textarea>
                                     </div>
 
 
