@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Clientes</div>
+                <div class="card-header">Equipamentos</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,17 +22,13 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <strong>ID:</strong> {{$client->id}}<br/>
-                            <strong>Nome:</strong> {{$client->name}}<br/>
-                            <strong>Nome Fantasia:</strong> {{$client->name_fantasy}}<br/>
-                            <strong>Tipo de Pessoa:</strong> {{$client->category_id}}<br/>
-                            <strong>CPF_CNPJ:</strong> {{$client->cpf_cnpj}}<br/>
-                            <strong>Endereço:</strong> {{$client->address}}<br/>
-                            <strong>Número:</strong> {{$client->number}}<br/>
-                            <strong>Cidade:</strong> {{$client->type}}
-                            <strong>UF:</strong> {{$client->uf}}<br/>
-                            <strong>E-mail:</strong> {{$client->email}}<br/>
-                            <strong>Observação:</strong> {{$client->obs}}<br/>
+                            <strong>ID:</strong> {{$equipament->id}}<br/>
+                            <strong>Nome:</strong> {{$equipament->nome}}<br/>
+                            <strong>Marca:</strong> {{$equipament->marca}}<br/>
+                            <strong>Descricao:</strong> {{$equipament->descricao}}<br/>
+                            <strong>Condição:</strong> {{$equipament->condicao}}<br/>
+                            <strong>Data de Aquisição:</strong> {{$equipament->dataaquisicao}}<br/>
+
 
                         </div>
                     </div>

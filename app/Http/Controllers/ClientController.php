@@ -81,7 +81,7 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
 
-        try {
+       try {
 
             $client->name = $request->name;
             $client->cpf_cnpj = $request->cpf_cnpj;
@@ -89,9 +89,9 @@ class ClientController extends Controller
             $client->address = $request->address;
             $client->number = $request->number;
             $client->city = $request->city;
-            $client->name = $request->uf;
-            $client->name = $request->email;
-            $client->name = $request->obs;
+            $client->uf = $request->uf;
+            $client->email = $request->email;
+            $client->obs = $request->obs;
 
             $client->save();
 
@@ -99,9 +99,10 @@ class ClientController extends Controller
                 ->with('status','Cliente editada com sucesso!');
         } catch (\Exception $exception) {
 
-            return redirect(route('clients.index'))
-                ->with('error', 'Erro ao editar a categoria: ' .
-                    $exception->getMessage());
+   //         return redirect(route('clients.index'))
+   //             ->with('error', 'Erro ao editar a categoria: ' .
+   //                 $exception->getMessage());
+           echo  $exception->getMessage();
         }
     }
 

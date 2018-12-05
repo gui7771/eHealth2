@@ -25,7 +25,7 @@ class EquipamentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipaments.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class EquipamentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            Equipaments::create($request->only(['nome','marca','descricao','condicao','dataaquisicao']));
+            return redirect(route('equipaments.index'))
+                ->with('status','Equipamento cadastrado com sucesso!');
+        } catch (\Exception $exception) {
+
+            //return redirect(route('equipaments.index'));
+                //->with('error', 'Erro ao cadastrar o equipamento: ' .
+                 //   $exception->getMessage());
+            echo $exception->getMessage();
+        }
     }
 
     /**
@@ -45,9 +55,9 @@ class EquipamentsController extends Controller
      * @param  \App\Equipaments  $equipaments
      * @return \Illuminate\Http\Response
      */
-    public function show(Equipaments $equipaments)
+    public function show(Equipaments $equipament)
     {
-        //
+        return view('equipaments.show',compact('equipament'));
     }
 
     /**

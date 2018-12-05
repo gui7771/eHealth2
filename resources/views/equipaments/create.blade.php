@@ -25,58 +25,34 @@
                                 {{ method_field('POST') }} <!-- campo para méthodo de envio POST = Criar -->
 
                                 <div class="form-group">
-                                    <label for="name">Nome</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                                    <label for="name">Nome do Equipamento</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" value="{{ old('nome') }}">
                                 </div>
 
                                     <div class="form-group">
-                                        <label for="name">Nome Fantasia</label>
-                                        <input type="text" class="form-control" id="name_fantasy" name="name_fantasy" value="{{ old('name_fantasy') }}">
+                                        <label for="name">Marca</label>
+                                        <input type="text" class="form-control" id="marca" name="marca" value="{{ old('marca') }}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">Tipo de Pessoa</label>
-                                        <select class="form-control" name="category_id">
-                                            <option value="type">FISICA</option>
-                                            <option value="type">JURIDICA</option>
+                                        <label for="value_cost">Descrição</label>
+                                        <textarea class="form-control" name="descricao">{{ old('descricao') }}</textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Condição do Equipamento</label>
+                                        <select class="form-control" name="condicao">
+                                            <option value="OTIMO">OTIMO</option>
+                                            <option value="BOM">BOM</option>
+                                            <option value="REGULAR">REGULAR</option>
+                                            <option value="PESSIMO">PESSIMO</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">CPF/CNPJ</label>
-                                        <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" value="{{ old('cpf_cnpj') }}">
+                                        <label for="name">Data de Aquisição</label>
+                                        <input type="date" class="form-control" id="dataaquisicao" name="dataaquisicao" value="{{ old('dataaquisicao') }}">
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="name">Endereço</label>
-                                        <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="number">Número</label>
-                                        <input type="number" class="form-control" id="number" name="number" value="{{ old('number') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">Cidade</label>
-                                        <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">UF</label>
-                                        <input type="text" class="form-control" id="uf" name="uf" value="{{ old('uf') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">E-mail</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="value_cost">Observação</label>
-                                        <textarea class="form-control" name="obs">{{ old('obs') }}</textarea>
-                                    </div>
-
 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
                             </form>

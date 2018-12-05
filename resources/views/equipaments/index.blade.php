@@ -30,16 +30,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($equipaments as $equipaments)
+                            @foreach($equipaments as $equipament)
                                 <tr>
-                                    <td>{{ $equipaments->id }}</td>
-                                    <td>{{ $equipaments->nome }}</td>
-                                    <td>{{ $equipaments->marca }}</td>
-                                    <td>{{ $equipaments->dataaquisicao }}</td>
+                                    <td>{{ $equipament->id }}</td>
+                                    <td>{{ $equipament->nome }}</td>
+                                    <td>{{ $equipament->marca }}</td>
+                                    <td>{{ $equipament->dataaquisicao }}</td>
                                     <td>
                                         <div class="btn-group btn-group-sm">
-                                            <a href="{{ route('$equipaments.show',$equipaments) }}" class="btn btn-info"><i  class="fa fa-eye"></i></i> </a>
-                                            <a href="{{ route('$equipaments.edit',$equipaments) }}"  class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
+                                            <a href="{{ route('equipaments.show',$equipament) }}" class="btn btn-info"><i  class="fa fa-eye"></i></i></a>
+                                            <a href="{{ route('equipaments.edit',$equipament) }}"  class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
                                             <a href="#"  class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
                                         </div>
                                     </td>
