@@ -107,8 +107,11 @@ class EquipamentsController extends Controller
      * @param  \App\Equipaments  $equipaments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Equipaments $equipaments)
+    public function destroy($id)
     {
-        //
+        $equipament = Equipaments::find($id);
+        $equipament->delete();
+
+        return redirect (route('equipaments.index'));
     }
 }

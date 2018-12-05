@@ -42,7 +42,12 @@
                                         <div class="btn-group btn-group-sm">
                                             <a href="{{ route('clients.show',$client) }}" class="btn btn-info"><i  class="fa fa-eye"></i></i> </a>
                                             <a href="{{ route('clients.edit',$client) }}"  class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
-                                            <a href="#"  class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
+                                            <a href="#"  class="btn btn-danger" onclick="event.preventDefault();
+                                                    document.getElementById('delete-form-{{$client->id}}').submit();"><i href="#" class="fa fa-trash"></i> </a>
+                                            <form id="delete-form-{{$client->id}}" action="{{ route('clients.destroy', $client->id) }}" method="POST" style="display: none;">
+                                                @csrf
+                                                {{method_field('DELETE')}}
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
