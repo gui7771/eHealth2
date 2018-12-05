@@ -53,8 +53,8 @@
 
 
                         <li class="nav-item">
-                            @if (Route::has('categories.index'))
-                                <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categoria') }}</a>
+                            @if (Route::has('equipaments.index'))
+                                <a class="nav-link" href="{{ route('equipaments.index') }}">{{ __('Equipamentos') }}</a>
                             @endif
                         </li>
                         <li class="nav-item">
