@@ -21,53 +21,38 @@
                             {{--['type','cpf_cnpj','name','name_fantasy',--}}
                             {{--'email','address','number','city','uf','obs'];--}}
 
-                            <form action="{{ route('equipaments.update',$client) }}" method="POST">
+                            <form action="{{ route('equipaments.update',$equipament) }}" method="POST">
                                 {{ csrf_field() }} <!-- campo invísivel para segurança de formulário -->
                                 {{ method_field('PUT') }} <!-- campo para méthodo de envio POST = Criar -->
 
                                     <div class="form-group">
-                                        <label for="name">Nome</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $client->name) }}">
+                                        <label for="name">Nome do Equipamento</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" value="{{ old('nome', $equipament->nome) }}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">CNPJ/CPF</label>
-                                        <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" value="{{ old('cpf_cnpj',$client->cpf_cnpj) }}">
+                                        <label for="name">Marca</label>
+                                        <input type="text" class="form-control" id="marca" name="marca" value="{{ old('marca',$equipament->marca) }}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">Nome Fantasia</label>
-                                        <input type="text" class="form-control" id="name_fantasy" name="name_fantasy" value="{{ old('name_fantasy',$client->name_fantasy) }}">
+                                        <label for="value_cost">Descrição</label>
+                                        <textarea class="form-control" name="descricao">{{ old('descricao', $equipament->descricao) }}</textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name">Endereço</label>
-                                        <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $client->address) }}">
+                                        <label for="name">Condição</label>
+                                        <select class="form-control" name="condicao">
+                                            <option value="{{ old('condicao', $equipament->condicao) }}">OTIMO</option>
+                                            <option value="{{ old('condicao', $equipament->condicao) }}">BOM</option>
+                                            <option value="{{ old('condicao', $equipament->condicao) }}">REGULAR</option>
+                                            <option value="{{ old('condicao', $equipament->condicao) }}">PESSIMO</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="number">Número</label>
-                                        <input type="number" class="form-control" id="number" name="number" value="{{ old('number', $client->number) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">Cidade</label>
-                                        <input type="text" class="form-control" id="city" name="city" value="{{ old('city', $client->city) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">UF</label>
-                                        <input type="text" class="form-control" id="uf" name="uf" value="{{ old('uf', $client->uf) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name">E-mail</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email', $client->email) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="value_cost">Observação</label>
-                                        <textarea class="form-control" name="obs">{{ old('obs', $client->obs) }}</textarea>
+                                        <label for="name">Data de Aquisição</label>
+                                        <input type="date" class="form-control" id="dataaquisicao" name="dataaquisicao" value="{{ old('dataaquisicao', $equipament->dataaquisicao) }}">
                                     </div>
 
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Salvar</button>

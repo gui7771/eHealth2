@@ -57,11 +57,6 @@
                                 <a class="nav-link" href="{{ route('equipaments.index') }}">{{ __('Equipamentos') }}</a>
                             @endif
                         </li>
-                        <li class="nav-item">
-                            @if (Route::has('products.index'))
-                                <a class="nav-link" href="{{ route('products.index') }}">{{ __('Produtos') }}</a>
-                            @endif
-                        </li>
 
                         <li class="nav-item">
                             @if (Route::has('clients.index'))

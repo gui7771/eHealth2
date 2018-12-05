@@ -38,7 +38,7 @@
                                     <td>{{ $equipament->dataaquisicao }}</td>
                                     <td>
                                         <div class="btn-group btn-group-sm">
-                                            <a href="{{ route('equipaments.show',$equipament) }}" class="btn btn-info"><i  class="fa fa-eye"></i></i></a>
+                                            <a href="{{ route('equipaments.show',$equipament) }}" class="btn btn-info"><i  class="fa fa-eye"></i></a>
                                             <a href="{{ route('equipaments.edit',$equipament) }}"  class="btn btn-warning"><i href="#" class="fa fa-edit"></i></i> </a>
                                             <a href="#"  class="btn btn-danger"><i href="#" class="fa fa-trash"></i> </a>
                                         </div>

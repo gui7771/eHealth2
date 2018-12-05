@@ -66,9 +66,9 @@ class EquipamentsController extends Controller
      * @param  \App\Equipaments  $equipaments
      * @return \Illuminate\Http\Response
      */
-    public function edit(Equipaments $equipaments)
+    public function edit(Equipaments $equipament)
     {
-        //
+        return view('equipaments.edit',compact('equipament'));
     }
 
     /**
@@ -78,9 +78,27 @@ class EquipamentsController extends Controller
      * @param  \App\Equipaments  $equipaments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Equipaments $equipaments)
+    public function update(Request $request, Equipaments $equipament)
     {
-        //
+        try {
+
+            $equipament->nome = $request->nome;
+            $equipament->marca = $request->marca;
+            $equipament->descricao = $request->descricao;
+            $equipament->condicao = $request->condicao;
+            $equipament->dataaquisicao = $request->dataaquisicao;
+
+            $equipament->save();
+
+            return redirect(route('equipaments.index'))
+                ->with('status','Equipamento editado com sucesso!');
+        } catch (\Exception $exception) {
+
+            //         return redirect(route('clients.index'))
+            //             ->with('error', 'Erro ao editar a categoria: ' .
+            //                 $exception->getMessage());
+            echo  $exception->getMessage();
+        }
     }
 
     /**
